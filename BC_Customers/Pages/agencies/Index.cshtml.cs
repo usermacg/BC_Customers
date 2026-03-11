@@ -49,7 +49,7 @@ namespace BC_Customers.Pages.agencies
                     listAgencies.Add(agency);
                 }
                 connection.Close();*/
-               listAgencies1 = contexte.Agencies.ToList();
+               listAgencies = contexte.Agencies.ToList();
                 
 
             }
