@@ -1,0 +1,44 @@
+﻿@page
+@model BC_Customers.Pages.agencies.IndexModel
+@{
+}
+<br>
+<h2>List of Agencies</h2>
+<a class="btn btn-primary btn-sm" href="/agencies/Create">New Agencies</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>AgencyCode</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Province</th>
+            <th>Country</th>
+            <th>IsActive</th>
+            <th>CreatedAt</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listAgencies)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.AgencyCode</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.City</td>
+                <td>@item.Province</td>
+                <td>@item.Country</td>
+                <td>@item.IsActive</td>
+                <td>@item.CreatedAt</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/agencies/Edit?id=">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/agencies/Delete?id=">Delete</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+﻿@page
+@model BC_Customers.Pages.Clients.IndexModel
+@{
+}
+<br>
+<h2>List of clients</h2>
+<a class="btn btn-primary btn-sm" href="/clients/Create">New client</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CustomerNumber</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Province</th>
+            <th>Country</th>
+            <th>CreatedAt</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listClients)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.CustomerNumber</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Address</td>
+                <td>@item.City</td>
+                <td>@item.Province</td>
+                <td>@item.Country</td>
+                <td>@item.CreatedAt</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Clients/Edit?id=">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Clients/Delete?id=">Delete</a>
+                </td>
+               
+            </tr>
+        } 
+    </tbody>
+</table>
